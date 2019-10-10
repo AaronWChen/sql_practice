@@ -21,7 +21,7 @@ ORDER BY count DESC
 LIMIT 10;
 
 /* Top 10 community areas with the highest number of jobs in 2017 */
-SELECT census.commarea, COUNT(jobs.c000) AS count  --, profile.community
+SELECT census.commarea, SUM(jobs.c000) AS count  --, profile.community
 FROM il_wac_s000_jt00_2017 AS jobs
 JOIN il_xwalk
     ON jobs.w_geocode = il_xwalk.tabblk2010
